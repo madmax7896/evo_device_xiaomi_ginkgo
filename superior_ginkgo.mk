@@ -18,6 +18,9 @@ TARGET_BOOT_ANIMATION_RES := 1080
 $(call inherit-product, vendor/superior/config/common.mk)
 $(call inherit-product, vendor/miuicamera/common/common-vendor.mk)
 
+# Launcher
+TARGET_LAUNCHER := oplauncher
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := superior_ginkgo
 PRODUCT_DEVICE := ginkgo
@@ -27,5 +30,6 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-#OFFICIAL
-DEVICE_MAINTAINERS="MADMAX"
+# Maintainer prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.superior.maintainer=MADMAX
