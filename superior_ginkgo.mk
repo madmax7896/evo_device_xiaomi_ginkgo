@@ -19,7 +19,7 @@ $(call inherit-product, vendor/superior/config/common.mk)
 $(call inherit-product, vendor/miuicamera/common/common-vendor.mk)
 
 # Launcher
-TARGET_LAUNCHER := oplauncher
+TARGET_LAUNCHER := lawnchair
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := superior_ginkgo
