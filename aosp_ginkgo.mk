@@ -13,16 +13,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
-# Inherit some common SuperiorOS stuff.
+# Inherit some common Evolution X stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/superior/config/common.mk)
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+EVO_MAINTAINER := MADMAX
+EVO_SUPPORT_URL := https://t.me/EvolutionXGinkllow
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, vendor/miuicamera/common/common-vendor.mk)
 
-# Launcher
-TARGET_LAUNCHER := lawnchair
-
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := superior_ginkgo
+PRODUCT_NAME := aosp_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
@@ -30,6 +31,4 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Maintainer prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.superior.maintainer=MADMAX
+
